@@ -20,7 +20,7 @@ backup=('etc/runit/sv/openvpn/conf')
 install="openvpn-runit-uni.install"
 source=("openvpn.run"
         "openvpn.conf")
-sha256sums=('29e087682c5b90bc129798a301b34dbb5a7e2b8eaa50f764e3740d01e7347505'
+sha256sums=('335fc61dff835a1dd799dd5d7414d37a24c8c7b7785e916a19fa6fd4c8e724ca'
             '6a91fe2d1895f92f0402b64c2ec0322b9591ffca21132b7f27bae7664c260f32')
 
 _inst_sv(){

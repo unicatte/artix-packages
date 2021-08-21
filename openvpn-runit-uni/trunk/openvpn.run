@@ -1,6 +1,11 @@
 #!/bin/sh
-[ -r conf ] && source ./conf
-CONF_FILE=${CONF_FILE:=/etc/openvpn/openvpn.conf}
-[[ $CONF_FILE == \/* ]] || CONF_FILE=/etc/openvpn/client/$CONF_FILE
-cd $(dirname $CONF_FILE)
+[ -r conf ] && . ./conf
+
+case "$CONF_FILE" in
+	"") CONF_FILE=/etc/openvpn/openvpn.conf ;;
+	\/*) ;;
+	*) CONF_FILE=/etc/openvpn/client/$CONF_FILE ;;
+esac
+
+cd "$(dirname $CONF_FILE)" || exit
 exec openvpn --config $CONF_FILE
